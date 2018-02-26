@@ -18,26 +18,22 @@ function comments(state = [], action) {
         case REMOVE_COMMENT:
             return  state.filter(comment => comment.id !== action.id);
         case EDIT_COMMENT:
-            let input = prompt('Edit post');
-            if (input === null) {
-                input = action.text;
-            }
             return state.map(comment => {
-                if(comment.id === action.id) {
-                    return {...comment, text: input}
+                if (comment.id === action.id) {
+                    return {...comment, text: action.text}
                 }
                 return comment;
             });
         case THUMB_UP_COMMENT:
             return state.map(comment => {
-                if(comment.id === action.id) {
+                if (comment.id === action.id) {
                     return {...comment, votes: comment.votes + 1}
                 }
                 return comment;
             });
         case THUMB_DOWN_COMMENT:
             return state.map(comment => {
-                if(comment.id === action.id) {
+                if (comment.id === action.id) {
                     return {...comment, votes: comment.votes - 1}
                 }
                 return comment;
