@@ -23,14 +23,14 @@ export function removeComment(id) {
     }
 }   
 
-export function thumbsUp(id) {
+export function thumbUpComment(id) {
     return {
         type: THUMB_UP_COMMENT,
         id
     }
 }
 
-export function thumbsDown(id) {
+export function thumbDownComment(id) {
     return {
         type : THUMB_DOWN_COMMENT,
         id
